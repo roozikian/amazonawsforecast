@@ -1,12 +1,5 @@
 import boto3
 
-#### Create predictor - put out of comment, the one you want to make predict with ####
-# autoarima_algorithm_arn = 'arn:aws:forecast:::algorithm/ARIMA'
-# prophet_algorithm_arn = 'arn:aws:forecast:::algorithm/Prophet'
-# autoarima_algorithm_arn = 'arn:aws:forecast:::algorithm/ETS'
-autoarima_algorithm_arn = 'arn:aws:forecast:::algorithm/Deep_AR_Plus'
-
-
 # fill it for login 
 aws_access_key_id = 'aws_access_key_id'
 aws_secret_access_key='aws_secret_access_key'
@@ -25,12 +18,17 @@ dataset_group_arn = dataset_group_arn
 dataset_arn = dataset_arn
 
 # Predictor model Determination
+
+#### Create predictor - put out of comment, the one you want to make predict with ####
+# autoarima_algorithm_arn = 'arn:aws:forecast:::algorithm/ARIMA'
+# prophet_algorithm_arn = 'arn:aws:forecast:::algorithm/Prophet'
+autoarima_algorithm_arn = 'arn:aws:forecast:::algorithm/Deep_AR_Plus'
+
+
 if autoarima_algorithm_arn == 'arn:aws:forecast:::algorithm/ARIMA':
     PredictorName='arimaperdict'
 elif autoarima_algorithm_arn == 'arn:aws:forecast:::algorithm/Prophet':
     PredictorName='prophetper'
-elif autoarima_algorithm_arn == 'arn:aws:forecast:::algorithm/ETS':
-    PredictorName='automlLdict'
 elif autoarima_algorithm_arn == 'arn:aws:forecast:::algorithm/Deep_AR_Plus':
     PredictorName='Deep_AR_Plus2'
 
