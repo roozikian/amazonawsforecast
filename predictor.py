@@ -57,6 +57,4 @@ predictor_response = forecast.create_predictor(
         'BackTestWindowOffset': 365
     },
     OptimizationMetric='RMSE'
-    # OptimizationMetric='objective_loss'
-    # OptimizationMetric='weightedQuantileLoss'
 )
